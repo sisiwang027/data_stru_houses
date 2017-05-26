@@ -13,16 +13,17 @@ def unique_houses(filename):
 
 
     """
-    houses = set()
-    house_list = []
+     # try using list comprehension instead of this
+    #houses = set()
+    # house_list = []
     file_data = open(filename)
     for line in file_data:
         line_list = line.split("|")
         if line_list[2] != '':
-            house_list.append(line_list[2])
-        houses = set(house_list)
+            houses.add(line_list[2]) # do not need to make list first
+        # houses = set(house_list)
       
-   # houses_set = {line.split('|') for line in file_data }
+  
 
    
 
