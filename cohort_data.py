@@ -14,7 +14,7 @@ def unique_houses(filename):
 
     """
      # try using list comprehension instead of this
-    #houses = set()
+    houses = set()
     # house_list = []
     file_data = open(filename)
     for line in file_data:
@@ -50,6 +50,22 @@ def sort_by_cohort(filename):
     summer_16 = []
     fall_15 = []
     ghosts = []
+
+    file_data = open(filename)
+    for line in file_data:
+        cohort_list = line.rstrip().split("|")
+        if "winter" in cohort_list[-1].lower():
+            winter_16.append(cohort_list[0] + " " + cohort_list[1])
+        elif "spring" in cohort_list[-1].lower():
+            spring_16.append(cohort_list[0] + " " + cohort_list[1])
+        elif "summer" in cohort_list[-1].lower():
+            summer_16.append(cohort_list[0] + " " + cohort_list[1])
+        elif "fal" in cohort_list[-1].lower():
+            fall_15.append(cohort_list[0] + " " + cohort_list[1])
+        elif "g" == cohort_list[-1].lower():
+            ghosts.append(cohort_list[0] + " " + cohort_list[1])
+        all_students = [fall_15, winter_16, spring_16, summer_16, ghosts]
+
 
     # Code goes here
 
